@@ -1,5 +1,8 @@
 package com.ingdanielpadilla.ejemplodematerialdesign;
 
+import android.content.Intent;
+import android.support.design.widget.NavigationView;
+import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
@@ -9,8 +12,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
+
+    DrawerLayout mDrawerLayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,7 +24,10 @@ public class MainActivity extends AppCompatActivity {
         Toolbar mToolbar=(Toolbar) findViewById(R.id.app_bar);
         setSupportActionBar(mToolbar);
 
-        DrawerLayout mDrawerLayout=(DrawerLayout) findViewById(R.id.drawer_layout);
+        NavigationView mNavigationView =(NavigationView)findViewById(R.id.main_drawer);
+        mNavigationView.setNavigationItemSelectedListener(this);
+
+        mDrawerLayout=(DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle mdrawerToggle=new ActionBarDrawerToggle(this,mDrawerLayout,mToolbar,R.string.drawer_open,R.string.drawer_close);
         mDrawerLayout.setDrawerListener(mdrawerToggle);
         mdrawerToggle.syncState();
@@ -46,5 +54,16 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(MenuItem menuItem) {
+        Intent intent=null;
+        if(menuItem.getItemId() == R.id.navigation_item_1){
+            mDrawerLayout.closeDrawer(GravityCompat.START);
+            intent = new Intent(this,SecondActivity.class);
+            startActivity(intent);
+            return true;
+        }else{return false;}
     }
 }
