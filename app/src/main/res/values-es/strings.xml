@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Ejemplo de Material Design</string>
+
+    <string name="hello_world..">Hola Mundo!</string>
+    <string name="action_settings">Ajustes</string>
+    <string name="drawer_open">Abrir</string>
+    <string name="drawer_close">Cerar</string>
+    <string name="title_activity_second">SecondActivity</string>
+
+    <string name="hello_world">Hola Mundo!</string>
+</resources>
