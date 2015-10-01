@@ -8,4 +8,8 @@
     <string name="title_activity_second">SecondActivity</string>
 
     <string name="hello_world">Hola Mundo!</string>
+    <string name="navigation_item_1">Item de navegacion 1</string>
+    <string name="navigation_item_2">Item de navegacion 2</string>
+    <string name="navigation_item_3">Item de navegacion 3</string>
+    <string name="navigation_item_4">Item de navegacion 4</string>
 </resources>
