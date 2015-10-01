@@ -35,9 +35,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         mDrawerLayout.setDrawerListener(mdrawerToggle);
         mdrawerToggle.syncState();
 
-        mSelectedId= savedInstanceState == null ? R.id.navigation_item_1 : savedInstanceState.getInt(SELECTED_ITEM_ID);
+        //mSelectedId= savedInstanceState == null ? R.id.navigation_item_1 : savedInstanceState.getInt(SELECTED_ITEM_ID);
 
-        navigate(mSelectedId);
+        //navigate(mSelectedId);
 
 
     }
